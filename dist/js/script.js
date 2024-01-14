@@ -18,3 +18,23 @@ hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
   navMenu.classList.toggle("hidden");
 });
+
+// thank you
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const url = e.target.action;
+  const formData = new FormData(contactForm);
+
+  fetch(url, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors",
+  })
+    .then(() => {
+      // url thank you
+    })
+    .catch((e) => alert("Error occured"));
+});
